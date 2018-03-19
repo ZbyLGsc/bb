@@ -11,8 +11,8 @@ control_constants:
   Tv: 1 #[sec]
 
   #Geometry constants:
-  alpha: 0.78539816339 #[rad]   45°   angle of wheel to middle point of ball and senkrechte nach oben dazu
-  beta:  0.0           #[rad]   0°    winkel von der imu_x zu Rad 1. Räder gegen den Uhrzeigersinn numeriert!
+  alpha: 0.78539816339 #[rad]   45°   angle of wheel to middle point of ball and z axis
+  beta:  0.0           #[rad]   0°    angle of the imu _ x to wheel 1. wheels counterclockwise is used.
 
   #Control3D Gains:
 

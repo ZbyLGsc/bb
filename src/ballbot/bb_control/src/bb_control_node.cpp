@@ -121,7 +121,7 @@ namespace ballbot
 
     double Ty = -1.0*(gains_2D_Kyz_[1]*imu_phi_[1]+gains_2D_Kyz_[3]*imu_dphi_[1]);
 
-    double Tz = 0.0;
+    double Tz = 1.0;
 
     Ty=-Ty;
     double T1=(2*cb_)/(3*ca_)*Tx+(2*sb_)/(3*ca_)*Ty+1/(3*sa_)*Tz;
@@ -328,8 +328,8 @@ namespace ballbot
   {
     previous_imu_msg_ = *imu_msg;
     imu_phi_ = toEulerAngle(previous_imu_msg_.orientation.x, previous_imu_msg_.orientation.y, previous_imu_msg_.orientation.z, previous_imu_msg_.orientation.w); //rad
-    imu_phi_[1]=-imu_phi_[1]; // drehe die y-Achse ist auch beim echten system anders!
-    // TODO: z-Achse müsste auch noch gedreht werden!
+    imu_phi_[1]=-imu_phi_[1]; // if the y axis is the real system differently. 
+    // TODO: z axis should also be rotated. 
     imu_dphi_.at(0)=previous_imu_msg_.angular_velocity.x; // rad/sec
     imu_dphi_.at(1)=-previous_imu_msg_.angular_velocity.y;
     imu_dphi_.at(2)=previous_imu_msg_.angular_velocity.z;
